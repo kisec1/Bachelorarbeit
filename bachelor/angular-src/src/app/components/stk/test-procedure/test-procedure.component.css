@@ -1,0 +1,36 @@
+mat-form-field{
+  padding-right: 10px;
+}
+
+mat-divider{
+  margin-top: 20px;
+}
+
+.testPoint{
+  margin-bottom: 30px;
+}
+
+.hint{
+  color: blue;
+}
+
+.green{
+  color: green;
+  vertical-align: middle;
+  padding-bottom: 3px;
+}
+
+.orange{
+  color: orangered;
+  vertical-align: middle;
+  padding-bottom: 3px;
+}
+
+.black{
+  vertical-align: middle;
+  padding-bottom: 3px;
+}
+
+.sectionTitle{
+  margin-right: 10px;
+}

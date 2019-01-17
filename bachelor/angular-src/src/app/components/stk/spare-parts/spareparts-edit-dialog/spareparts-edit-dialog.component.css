@@ -1,0 +1,12 @@
+.numberField{
+  text-align: right;
+}
+
+mat-form-field{
+  margin-right: 10px;
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}

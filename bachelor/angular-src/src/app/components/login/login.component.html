@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>
+    <img class="logo" src="assets/images/hospitoolLogo.png">
+  </mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+      <mat-form-field>
+        <input matInput [(ngModel)]="username" name="username" required autocomplete="on">
+        <span matPrefix class="icon"><mat-icon>person</mat-icon>&nbsp;</span>
+        <mat-label>Username</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="password" name="password" type="password" required autocomplete="on">
+        <span matPrefix class="icon"><mat-icon>vpn_key</mat-icon>&nbsp;</span>
+        <mat-label>Passwort</mat-label>
+      </mat-form-field>
+      <button mat-flat-button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </mat-card-content>
+  <mat-progress-bar mode="indeterminate" *ngIf="waiting"></mat-progress-bar>
+</mat-card>

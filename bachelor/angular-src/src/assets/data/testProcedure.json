@@ -1,0 +1,124 @@
+{
+  "model":"Pari TurboBoy S",
+  "version":"Pari Boy S 53, Version 20.07.2009",
+  "testProcedure": [
+    {
+      "sectionTitle": {
+        "nr": "10",
+        "description_de": "Sichtkontrolle",
+        "description_en": "Optical check"
+      },
+      "testPoints": [
+        {
+          "nr": "20",
+          "description_de": "Gerät und Zubehör sauber, vollständig und unbeschädigt",
+          "description_en": "**ENG** Gerät und Zubehör sauber, vollständig und unbeschädigt",
+          "dimension": "i.O.",
+          "result": "X"
+        },
+        {
+          "nr": "30",
+          "description_de": "Netzanschluss und -kabel unbeschädigt",
+          "description_en": "**ENG** Netzanschluss und -kabel unbeschädigt",
+          "dimension": "i.O.",
+          "result": "i.O."
+        },
+        {
+          "nr": "40",
+          "description_de": "Aufschriften vollständig und lesbar",
+          "description_en": "**ENG** Aufschriften vollständig und lesbar",
+          "dimension": "i.O.",
+          "result": "N.V."
+        }
+      ]
+    },
+    {
+      "sectionTitle": {
+        "nr": "50",
+        "description_de": "Funktionskontrolle",
+        "description_en": "**ENG** Funktionskontrolle",
+        "dimension": "i.O."
+      },
+      "testPoints": [
+        {
+          "nr": "60",
+          "description_de": "Funktionskontrolle durchführen",
+          "description_en": "**ENG** Funktionskontrolle durchführen",
+          "dimension": "i.O.",
+          "result": "N.V."
+        },
+        {
+          "nr": "70",
+          "description_de": "Dichtigkeitstest durchführen",
+          "description_en": "**ENG** Dichtigkeitstest durchführen",
+          "dimension": "i.O.",
+          "result": "X"
+        },
+        {
+          "nr": "80",
+          "description_de": "Druckprüfung durchführen",
+          "description_en": "**ENG** Druckprüfung durchführen",
+          "dimension": "bar",
+          "minValue": 1,
+          "maxValue": 1.4,
+          "result": "1.2",
+          "comment": "asdf"
+        }
+      ]
+    },
+    {
+      "sectionTitle": {
+        "nr": "90",
+        "description_de": "Wartungsarbeiten",
+        "description_en": "**ENG** Wartungsarbeiten"
+      },
+      "testPoints": [
+        {
+          "nr": "100",
+          "description_de": "Filter jährlich wechseln",
+          "description_en": "**ENG** Filter jährlich wechseln",
+          "dimension": "i.O."
+        },
+        {
+          "nr": "110",
+          "description_de": "Topfmanschette nach Bedarf wechseln (ca. Alle 3 Jahre)",
+          "description_en": "**ENG** Topfmanschette nach Bedarf wechseln (ca. Alle 3 Jahre)",
+          "dimension": "i.O."
+        }
+      ]
+    },
+    {
+      "sectionTitle": {
+        "nr": "120",
+        "description_de": "Elektrische Sicherheit EN 62353",
+        "description_en": "**ENG** Elektrische Sicherheit EN 62353"
+      },
+      "testPoints": [
+        {
+          "nr": "130",
+          "description_de": "Schutzleiterwiderstand",
+          "description_en": "**ENG** schutzleiterwiderstand",
+          "dimension": "mOhm",
+          "minValue": 0,
+          "maxValue": 300
+        },
+        {
+          "nr": "140",
+          "description_de": "Geräteableitstrom SK1",
+          "description_en": "**ENG** Geräteableitstrom SK1",
+          "dimension": "uA",
+          "minValue": 0,
+          "maxValue": 500
+        },
+        {
+          "nr": "150",
+          "description_de": "Geräteableitstrom SK2",
+          "description_en": "**ENG** Geräteableitstrom SK2",
+          "dimension": "uA",
+          "minValue": 0,
+          "maxValue": 100
+        }
+      ]
+    }
+  ]
+}

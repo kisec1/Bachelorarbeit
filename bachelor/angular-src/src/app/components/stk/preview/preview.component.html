@@ -1,0 +1,251 @@
+<table class="headerTable">
+  <tr>
+    <td>
+      <div class="logo">
+        <img class="logo" src="/src/assets/images/hospitoolLogo.png"
+             style='height: 100%; width: 100%; object-fit: contain;'/>
+      </div>
+    </td>
+    <td colspan="2" class="reportTitle">
+      <b>STK</b><br>
+      {{ 'preview.safetyCheck' | translate}}
+    </td>
+    <td colspan="2" class="qrCode">
+      QR-CODE
+    </td>
+  </tr>
+  <tr>
+    <td colspan="5" style="height: 20px;"></td>
+  </tr>
+  <tr>
+    <td rowspan="5" class="borderLeft textTop">
+      <b>
+        {{stkService.selectedReport.client.name}}<br>
+        {{stkService.selectedReport.client.street}}<br>
+        {{stkService.selectedReport.client.zip}} {{stkService.selectedReport.client.city}} <br>
+      </b>
+    </td>
+    <td rowspan="5" class="borderLeft textTop">
+      {{ 'preview.id' | translate}}<br>
+      {{ 'preview.sn' | translate}}<br>
+      {{ 'preview.model' | translate}}
+    </td>
+    <td rowspan="5">
+      <b>
+        {{stkService.selectedReport.device.id}}<br>
+        {{stkService.selectedReport.device.serial}}<br>
+        {{stkService.selectedReport.device.model}}<br>
+        {{stkService.selectedReport.device.description}}<br>
+        {{stkService.selectedReport.device.brand}}<br>
+      </b>
+    </td>
+    <td rowspan="5" class="borderLeft textTop">
+      {{ 'preview.contract' | translate}}<br>
+      {{ 'preview.sla' | translate}}<br>
+      {{ 'preview.interval' | translate}}<br>
+      {{ 'preview.year' | translate}}
+    </td>
+    <td rowspan="5" class="borderRight textTop">
+      <b>
+        {{stkService.selectedReport.contract}}<br>
+        **R+**<br>
+        {{stkService.selectedReport.device.intervall}}<br>
+        {{stkService.selectedReport.year}}
+      </b>
+    </td>
+  </tr>
+  <tr></tr>
+  <tr></tr>
+  <tr></tr>
+  <tr></tr>
+  <tr>
+    <td class="borderLeft">{{ 'preview.account' | translate}} <b>{{stkService.selectedReport.device.department}}</b></td>
+    <td class="borderLeft">{{ 'preview.location' | translate}}</td>
+    <td class="topBorder"><b>{{stkService.selectedReport.device.location}}</b></td>
+    <td colspan="2" class="textCenter borderLeft borderRight">**SD: &#8864;**</td>
+  </tr>
+
+  <!-- tools muss hier noch rein-->
+  <tr>
+    <td colspan="5"
+        style="border: 1px black solid;
+        padding-top: 3px;
+        padding-bottom: 3px;">
+      <span>{{ 'preview.tools' | translate}}</span>
+      <span *ngFor="let tool of stkService.selectedReport.tools; let i = index" style="padding-left: 20px;">
+        <small>{{1+i}}. </small><b>{{tool}}</b>
+      </span>
+    </td>
+  </tr>
+
+
+  <!-- ServiceKit Row -->
+  <tr>
+    <td colspan="5"
+        style="border: 1px black solid;
+        padding-top: 3px;
+        padding-bottom: 3px;">
+      <span>{{ 'preview.serviceKit' | translate}}</span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(1) + 1"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(2) + 2"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(3) + 3"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(4) + 4"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(5) + 5"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(6) + 6"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(7) + 7"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(8) + 8"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(10) + 10"></span>
+      <span style="padding-left: 20px;" [innerHTML]="checkServiceKit(12) + 12"></span>
+    </td>
+  </tr>
+</table>
+
+
+<table class="workTable">
+
+  <tr>
+    <td style="border: black 1px dotted;">
+      {{ 'preview.service' | translate}}
+    </td>
+    <td style="border: black 1px dotted;" class="textCenter">
+      {{ 'preview.date' | translate}}
+    </td>
+    <td style="border: black 1px dotted;" class="textCenter">
+      {{ 'preview.technician' | translate}}
+    </td>
+    <td style="border: black 1px dotted;" class="textCenter">
+      {{ 'preview.workTime' | translate}}
+    </td>
+    <td style="border: black 1px dotted;" class="textCenter">
+      {{ 'preview.travelTime' | translate}}
+    </td>
+    <td style="border: black 1px dotted;" class="textCenter">
+      {{ 'preview.total' | translate}}
+    </td>
+    <td style="border: black 1px dotted;" class="textCenter">
+      {{ 'preview.chargeable' | translate}}
+    </td>
+  </tr>
+  <tr *ngFor="let work of stkService.selectedReport.work">
+    <td style="border: black 1px dotted;">{{work.service}}</td>
+    <td style="border: black 1px dotted;" class="textCenter">{{work.date | date: 'dd.MM.yyyy'}}</td>
+    <td style="border: black 1px dotted;" class="textCenter">{{work.technician}}</td>
+    <td style="border: black 1px dotted;" class="textCenter">{{work.workload}}</td>
+    <td style="border: black 1px dotted;" class="textCenter">{{work.travelTime}}</td>
+    <td style="border: black 1px dotted;" class="textCenter">{{work.workload + work.travelTime}}</td>
+    <td style="border: black 1px dotted;" class="textCenter" [innerHTML]="checkChargeable(work.chargeable)"></td>
+  </tr>
+</table>
+
+<table class="sparePartTable" *ngIf="stkService.selectedReport.spareParts">
+  <tr>
+    <td colspan="8"> {{ 'preview.spareParts' | translate}}</td>
+  </tr>
+  <tr>
+    <td class="sparePartCell">
+      {{ 'preview.articleNumber' | translate}}
+    </td>
+    <td class="sparePartCell">
+      {{ 'preview.description' | translate}}
+    </td>
+    <td class="sparePartCell">
+      {{ 'preview.snLot' | translate}}
+    </td>
+    <td class="sparePartCell">
+      {{ 'preview.supplier' | translate}}
+    </td>
+    <td class="sparePartCell textCenter">
+      {{ 'preview.amount' | translate}}
+    </td>
+    <td class="sparePartCell textCenter">
+      {{ 'preview.price' | translate}}
+    </td>
+    <td class="sparePartCell textCenter">
+      {{ 'preview.total' | translate}}
+    </td>
+    <td class="sparePartCell textCenter">
+      {{ 'preview.chargeable' | translate}}
+    </td>
+  </tr>
+  <tr *ngFor="let sparePart of stkService.selectedReport.spareParts">
+    <td class="sparePartCell">{{sparePart.articleNr}}</td>
+    <td class="sparePartCell">{{sparePart.description}}</td>
+    <td class="sparePartCell">{{sparePart.serial}}</td>
+    <td class="sparePartCell">{{sparePart.supplier}}</td>
+    <td class="sparePartCell textCenter">{{sparePart.amount}}</td>
+    <td class="sparePartCell textCenter">{{sparePart.price}}</td>
+    <td class="sparePartCell textCenter">{{sparePart.amount * sparePart.price}}</td>
+    <td class="sparePartCell textCenter" [innerHTML]="checkChargeable(sparePart.chargeable)"></td>
+  </tr>
+</table>
+
+
+<div *ngIf="stkService.selectedReport.comment"
+     style="border: 1px black solid;
+     margin-top: 3px;
+     width: 18cm;
+     padding-top: 3px;
+     padding-bottom: 3px;">
+  <span>
+    <b> {{ 'preview.comments' | translate}}</b>
+  </span>
+  <br>
+  <span>{{stkService.selectedReport.comment}}</span>
+</div>
+
+<table class="footerTable">
+  <tr>
+    <td>{{'preview.notFound' | translate}}<span [innerHTML]="checkState('notFound')"></span></td>
+    <td>{{'preview.notAvailable' | translate}} <span [innerHTML]="checkState('notAvailable')"></span></td>
+    <td>{{'preview.notFinished' | translate}}<span [innerHTML]="checkState('notFinished')"></span></td>
+  </tr>
+  <tr>
+    <td>{{'preview.repairNeeds' | translate}}<span [innerHTML]="checkState('repairNeeds')"></span></td>
+    <td>{{'preview.outOfService' | translate}}<span [innerHTML]="checkState('outOfService')"></span></td>
+    <td class="borderLeft">{{'preview.passed' | translate}}</td>
+    <td class="borderRight"><span [innerHTML]="checkStatedPassed()"></span></td>
+  </tr>
+  <tr>
+    <td class="footerCell">{{'preview.date' | translate}}: {{today | date: 'dd.MM.yyyy'}}</td>
+    <td class="footerCell" colspan="2">{{'preview.technician' | translate}}: {{user.name}}</td>
+    <td rowspan="2" class="footerCell">{{'preview.signatureClient' | translate}}</td>
+  </tr>
+  <tr>
+    <td class="footerCell">{{stkService.selectedReport.testProcedure.version}}</td>
+    <td class="footerCell">{{'preview.teamLeader' | translate}}</td>
+    <td class="footerCell">{{'preview.charged' | translate}}</td>
+  </tr>
+</table>
+
+<hr>
+
+<div class="checkTableDiv">
+  <table *ngFor="let testSection of stkService.selectedReport.testProcedure.testSections; let i = index" class="checkTable">
+    <tr *ngIf="i == 0">
+
+      <td class="checkTableCol2 borderLeft"><small>{{'preview.testParameter' | translate}}</small></td>
+      <td class="checkTableCol3 borderLeft textCenter"><small>{{'preview.dimension' | translate}}</small></td>
+      <td class="checkTableCol3 borderLeft textCenter"><small>{{'preview.minimum' | translate}}</small></td>
+      <td class="checkTableCol3 borderLeft textCenter"><small>{{'preview.maximum' | translate}}</small></td>
+      <td class="checkTableCol3 borderLeft textCenter"><small>{{'preview.result' | translate}}</small></td>
+      <td class="checkTableComment borderLeft borderRight"><small>{{'preview.comment' | translate}}</small></td>
+
+    </tr>
+    <tr class="greyBack">
+      <th class="checkTableCol2 borderLeft ">{{testSection.sectionTitle.description_de}}</th>
+      <th class="checkTableCol3 borderLeft borderLeft greyBack"></th>
+      <th class="checkTableCol3 borderLeft borderLeft"></th>
+      <th class="checkTableCol3 borderLeft borderLeft"></th>
+      <th class="checkTableCol3 borderLeft borderLeft"></th>
+      <th class="checkTableComment borderLeft borderRight"></th>
+    </tr>
+    <tr *ngFor="let testPoint of testSection.testPoints">
+      <td class="checkTableCol2 borderLeft">{{testPoint.description_de}}</td>
+      <td class="checkTableCol3 borderLeft textCenter">{{testPoint.dimension}}</td>
+      <td class="checkTableCol3 borderLeft textCenter">{{testPoint.minValue}}</td>
+      <td class="checkTableCol3 borderLeft textCenter">{{testPoint.maxValue}}</td>
+      <td class="checkTableCol3 borderLeft textCenter">{{testPoint.result}}</td>
+      <td class="checkTableComment borderLeft borderRight">{{testPoint.comment}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,92 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="stkService.openDrawer">
+    <mat-toolbar *ngIf="(isHandset$ | async)">
+      {{"mainNav.menu" | translate}}
+    </mat-toolbar>
+
+    <!--Navigation sidenav-->
+    <mat-nav-list *ngIf="(isHandset$ | async)">
+      <a mat-list-item routerLink="/searchByClient"> {{"mainNav.search" | translate}}</a>
+      <a mat-list-item routerLink="/unfinishedReports"> {{"mainNav.unfinishedReports" | translate}}</a>
+      <a mat-list-item routerLink="/stk"> {{"mainNav.stk" | translate}}</a>
+      <a mat-list-item routerLink="/overview"> {{"mainNav.overview" | translate}}</a>
+    </mat-nav-list>
+
+    <!--Reports list sidenav-->
+    <mat-toolbar>
+      {{"mainNav.reports" | translate}}
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let report of stkService.reports"
+         (click)="stkService.selectReport(report)"
+         routerLink="/stk">
+        {{report.device.id}}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!--Top navigation-->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="stkService.openDrawer = !stkService.openDrawer">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Hospitool</span>
+
+      <!--Top navigation expanded-->
+      <div [ngClass]="{hidden: (isHandset$ | async)}" *ngIf="isLoggedIn()">
+        <button mat-flat-button [matMenuTriggerFor]="searchMenu">
+          {{"mainNav.search" | translate}}
+        </button>
+        <mat-menu #searchMenu="matMenu">
+          <button mat-menu-item routerLink="/searchByClient">{{"mainNav.byClient" | translate}}</button>
+          <button mat-menu-item routerLink="/unfinishedReports">{{"mainNav.unfinishedReports" | translate}}</button>
+        </mat-menu>
+        <button mat-flat-button routerLink="/stk"
+                (click)="stkService.openDrawer = true">{{"mainNav.stk" | translate}}</button>
+        <button mat-flat-button routerLink="/overview">{{"mainNav.overview" | translate}}</button>
+      </div>
+
+      <!--Top navigation always visible-->
+      <span class="spacer"></span>
+      <div *ngIf="isLoggedIn()">
+        <button mat-flat-button [matMenuTriggerFor]="settingsMenu">
+          <mat-icon>
+            settings
+          </mat-icon>
+        </button>
+        <mat-menu #settingsMenu="matMenu">
+          <button mat-menu-item routerLink="/profile">{{"mainNav.profile" | translate}}</button>
+          <button mat-menu-item (click)="logout()">{{"mainNav.logout" | translate}}</button>
+        </mat-menu>
+        <button mat-flat-button [matMenuTriggerFor]="languageMenu">
+          <mat-icon>
+            language
+          </mat-icon>
+          ({{selectedLanguage}})
+        </button>
+        <mat-menu #languageMenu="matMenu">
+          <button mat-menu-item (click)="useLanguage('de')">de</button>
+          <button mat-menu-item (click)="useLanguage('en')">en</button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <!-- Main content-->
+    <div calss="contentDiv">
+      <ng-content></ng-content>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

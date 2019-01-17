@@ -1,0 +1,136 @@
+.headerTable{
+  width: 18.3cm;
+  border-spacing:0;
+  border-collapse:collapse;
+}
+
+.workTable{
+  width: 18.3cm;
+  border-spacing:0;
+  border-collapse:collapse;
+  border: black solid 1px;
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: left;
+}
+.sparePartTable{
+  width: 18.3cm;
+  border-spacing:0;
+  border-collapse:collapse;
+  border: black solid 1px;
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: left;
+}
+
+.footerTable{
+  width: 18.3cm;
+  border-spacing:0;
+  border-collapse:collapse;
+  border: black solid 1px;
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: left;
+}
+
+.sparePartCell{
+  border: black dotted 1px;
+}
+
+.headerTableTwo{
+  border-spacing:0;
+  border-collapse:collapse;
+  border: 1px solid black;
+  width: 18.3cm;
+}
+
+.footerCell{
+  border: black solid 1px;
+}
+
+.borderLeft{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.borderRight{
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.firstCol{
+  width: 6.4cm;
+  vertical-align: text-top;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.secondCol{
+  width: 45%;
+}
+
+.logo{
+  max-width: 5cm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reportTitle{
+  text-align: center;
+  border: 1px solid black;
+}
+
+.topBorder{
+  border-top: 1px solid black;
+}
+
+.qrCode{
+  text-align: center;
+}
+
+.textTop{
+  vertical-align: text-top;
+}
+
+.checkTable{
+  text-align: left;
+  border-spacing:0;
+  border-collapse:collapse;
+  width: 18.3cm;
+
+}
+
+hr{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.checkTableDiv{
+  margin-top: 10px;
+}
+
+.checkTableCol2{
+  max-width: 6.3cm;
+  min-width: 6.3cm;
+}
+
+.checkTableCol3{
+  min-width: 2.1cm;
+  max-width: 2.1cm;
+}
+
+.checkTableComment{
+  min-width: 2.9cm;
+  max-width: 2.9cm;
+}
+
+.textCenter{
+  text-align: center;
+}
+
+.greyBack{
+  background-color: lightgrey;
+}

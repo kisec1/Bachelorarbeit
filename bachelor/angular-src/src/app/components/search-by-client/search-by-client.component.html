@@ -1,0 +1,86 @@
+<mat-card>
+  <mat-tab-group [(selectedIndex)]="searchPageService.activeTab">
+    <mat-tab label="{{'search.client'|translate}}">
+      <app-client-table (updateEvent)="clientTable.getData()"></app-client-table>
+    </mat-tab>
+    <mat-tab label="{{'search.devices'|translate}}" [disabled]="!searchPageService.selectedClient">
+      <h2 *ngIf="searchPageService.selectedClient">
+        {{getSelectedClient().name}}
+      </h2>
+      <app-device-table #clientTable></app-device-table>
+    </mat-tab>
+    <mat-tab label="{{'search.infos'|translate}}" [disabled]="!searchPageService.selectedDevice">
+      <fieldset>
+        <legend>{{'search.device'|translate}}</legend>
+        <table *ngIf="searchPageService.selectedDevice">
+          <tr>
+            <th>{{'search.id'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.id}}</td>
+            <th>{{'search.serial'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.serial}}</td>
+          </tr>
+          <tr>
+            <th>{{'search.model'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.model}}</td>
+            <th>{{'search.year'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.year}}</td>
+          <tr>
+            <th>{{'search.description'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.description}}</td>
+            <th>{{'search.brand'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.brand}}</td>
+          </tr>
+          <tr>
+            <th>{{'search.department'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.department}}</td>
+            <th>{{'search.nextCheck'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.nextCheck}}</td>
+          </tr>
+          <tr>
+            <th>{{'search.location'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.location}}</td>
+            <th>{{'search.lastCheck'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.lastCheck}}</td>
+          </tr>
+          <tr>
+            <th>{{'search.contract'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.contract}}</td>
+            <th>{{'search.contractNr'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.contractNr}}</td>
+          </tr>
+          <tr>
+            <th>{{'search.interval'|translate}}</th>
+            <td>{{searchPageService.selectedDevice.interval}}</td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <fieldset>
+        <legend>{{'search.client'|translate}}</legend>
+        <table *ngIf="searchPageService.selectedClient">
+          <tr>
+            <th>{{'search.name'|translate}}</th>
+            <td>{{searchPageService.selectedClient.name}}</td>
+          </tr>
+          <tr>
+            <th>{{'search.street'|translate}}</th>
+            <td>{{searchPageService.selectedClient.street +' '+ searchPageService.selectedClient.houseNr}}</td>
+          <tr>
+            <th>{{'search.city'|translate}}</th>
+            <td>{{searchPageService.selectedClient.zip + ' ' + searchPageService.selectedClient.city}}</td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <button mat-flat-button color="primary"
+              [disabled]="alreadyLoaded()"
+              (click)="createReport()">
+        {{'search.loadReport'|translate}}
+      </button>
+      <p *ngIf="alreadyLoaded()" class="info">
+        <mat-icon>info</mat-icon>
+        {{'search.alreadyLoaded'|translate}}
+      </p>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

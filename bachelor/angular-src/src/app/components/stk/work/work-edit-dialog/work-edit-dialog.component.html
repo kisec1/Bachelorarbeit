@@ -1,0 +1,76 @@
+<h2 mat-dialog-title="">{{ 'stk.edit' | translate}}</h2>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" #workForm="ngForm">
+    <mat-form-field>
+      <mat-select placeholder="{{ 'stk.service' | translate}}"
+                  [(ngModel)]="work.service"
+                  required
+                  name="service">
+        <mat-option value="STK">STK</mat-option>
+        <mat-option value="REP">REP</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="dp3"
+             placeholder="{{ 'stk.date' | translate}}"
+             disabled [(ngModel)]="work.date"
+             required
+             name="date"
+             [matDatepickerFilter]="dateFilter">
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="{{ 'stk.technician' | translate}}"
+             [(ngModel)]="work.technician"
+             required
+             name="technician"
+             minlength="4"
+             maxlength="4">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput class="numberField"
+             placeholder="{{ 'stk.workload' | translate}}"
+             type="number"
+             step="0.25"
+             min="0"
+             max="10"
+             [(ngModel)]="work.workload"
+             required
+             name="workload">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput class="numberField"
+             placeholder="{{ 'stk.travelTime' | translate}}"
+             type="number"
+             step="0.25"
+             min="0"
+             max="10"
+             [(ngModel)]="work.travelTime"
+             required
+             name="travelTime">
+    </mat-form-field>
+
+    <br>
+    <mat-checkbox [(ngModel)]="work.chargeable"
+                  (keyup.enter)="work.chargeable = !work.chargeable"
+                  name="chargeable">
+      {{ 'stk.chargeable' | translate}}
+    </mat-checkbox>
+    <br>
+    <div class="button-row">
+      <button mat-button mat-dialog-close>{{ 'stk.cancel' | translate}}</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="!workForm.form.valid">
+        {{ 'stk.save' | translate}}
+      </button>
+    </div>
+
+  </form>
+
+</mat-dialog-content>

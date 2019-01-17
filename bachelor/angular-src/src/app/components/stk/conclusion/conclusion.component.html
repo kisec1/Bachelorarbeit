@@ -1,0 +1,38 @@
+<div>
+  <mat-form-field>
+    <mat-label>{{"stk.serviceKit"|translate}}</mat-label>
+    <mat-select [(value)]="stkService.selectedReport.serviceKit">
+      <mat-option *ngFor="let serviceKit of serviceKits" [value]="serviceKit.value">
+        {{serviceKit.value}}
+        <small>{{serviceKit.viewValue}}</small>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<mat-form-field>
+  <mat-label>{{"stk.state"|translate}}</mat-label>
+  <mat-select [(value)]="stkService.selectedReport.state">
+    <mat-option value="passed" *ngIf="stkService.selectedReport.testProcedure.validationCheck()">
+      {{"stk.passed"|translate}}
+    </mat-option>
+    <mat-option value="notFound" *ngIf="!stkService.selectedReport.testProcedure.validationCheck()">
+      {{"stk.notFound"|translate}}
+    </mat-option>
+    <mat-option value="notAvailable" *ngIf="!stkService.selectedReport.testProcedure.validationCheck()">
+      {{"stk.notAvailable"|translate}}
+    </mat-option>
+    <mat-option value="unfinished">{{"stk.unfinished"|translate}}</mat-option>
+    <mat-option value="repairNeeds">{{"stk.repairNeeds"|translate}}</mat-option>
+    <mat-option value="outOfService" *ngIf="!stkService.selectedReport.testProcedure.validationCheck()">
+      {{"stk.outOfService"|translate}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div>
+  <mat-form-field>
+    <mat-label>{{"stk.comments"|translate}}</mat-label>
+    <textarea matInput [(ngModel)]="stkService.selectedReport.comment"></textarea>
+  </mat-form-field>
+</div>

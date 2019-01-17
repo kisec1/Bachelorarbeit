@@ -1,0 +1,111 @@
+<mat-card>
+  <mat-card-title>
+    {{('profile.tools'| translate)}}
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{('profile.favorites'| translate)}}
+  </mat-card-subtitle>
+  <mat-card-content>
+
+    <!--Tool add form-->
+    <form (ngSubmit)="onSubmitAddTool(); addToolForm.resetForm();" #addToolForm="ngForm">
+      <mat-form-field>
+        <input matInput
+               [(ngModel)]="id"
+               name="id" required
+               minlength="5"
+               maxlength="8">
+        <mat-label>{{('profile.id'| translate)}}</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput
+               [(ngModel)]="description"
+               name="description" required>
+        <mat-label>{{('profile.description'| translate)}}</mat-label>
+      </mat-form-field>
+      <button mat-flat-button type="submit"
+              [disabled]="!addToolForm.form.valid || alreadyAdded()">
+        {{('profile.add'| translate)}}
+      </button>
+    </form>
+    <mat-progress-bar mode="indeterminate" *ngIf="waiting"></mat-progress-bar>
+
+    <!--Tool List-->
+    <fieldset>
+      <legend>{{('profile.tools'| translate)}}</legend>
+      <table>
+        <tr>
+          <th>{{('profile.id'| translate)}}</th>
+          <th>{{('profile.description'| translate)}}</th>
+        </tr>
+        <tr *ngFor="let tool of toolService.tools">
+          <td>{{tool.id}}</td>
+          <td>{{tool.description}}</td>
+          <td>
+            <button mat-icon-button color="primary" (click)="deleteTool(tool)" color="warn">
+              <mat-icon aria-label="delete">delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+  </mat-card-content>
+</mat-card>
+
+<!--User Information-->
+<mat-card>
+  <mat-card-title>
+    {{('profile.particulars'| translate)}}
+  </mat-card-title>
+  <mat-card-subtitle>
+    {{('profile.overview'| translate)}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>{{('profile.name'| translate)}}</th>
+        <td>{{getUser().name}}</td>
+      </tr>
+      <tr>
+        <th>{{('profile.mail'| translate)}}</th>
+        <td>{{getUser().email}}</td>
+      </tr>
+      <tr>
+        <th>{{('profile.username'| translate)}}</th>
+        <td>{{getUser().username}}</td>
+      </tr>
+    </table>
+    <p>
+      <a href="mailto:ckiser@hospitec.ch?Subject=Fehlerhafte Personalien&body=Fehlerbeschreibung:">
+        {{('profile.mistake'| translate)}}
+      </a>
+    </p>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-card-subtitle>
+    {{('profile.changePassword'| translate)}}
+  </mat-card-subtitle>
+  <mat-card-content>
+
+    <!-- Password change form -->
+    <form (ngSubmit)="onSubmitChangePW()" #changePasswordForm="ngForm">
+      <mat-form-field>
+        <input matInput type="password" autocomplete="off" [(ngModel)]="currentPW" name="currentPW" required>
+        <mat-label>{{('profile.currentPassword'| translate)}}</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" autocomplete="off" [(ngModel)]="newPW" name="newPW" required>
+        <mat-label>{{('profile.newPassword'| translate)}}</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" autocomplete="off" [(ngModel)]="confNewPW" name="confNewPW" required>
+        <mat-label>{{('profile.confirmPassword'| translate)}}</mat-label>
+      </mat-form-field>
+      <button mat-flat-button type="submit" [disabled]="!changePasswordForm.form.valid">
+        {{('profile.changePassword'| translate)}}
+      </button>
+    </form>
+
+  </mat-card-content>
+</mat-card>

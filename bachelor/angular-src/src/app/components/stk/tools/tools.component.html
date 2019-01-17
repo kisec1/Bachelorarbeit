@@ -1,0 +1,71 @@
+<mat-tab-group>
+  <mat-tab label="{{'stk.overview'|translate}}">
+
+    <br>
+    <form (ngSubmit)="addTool(toolId); toolAddForm.resetForm();" #toolAddForm="ngForm" *ngIf="!maxNumberOfTools()">
+      <mat-form-field>
+        <input matInput
+               [(ngModel)]="toolId"
+               [disabled]="!allowAdding()"
+               name="toolId"
+               maxlength="8"
+               minlength="5">
+        <mat-label>{{'stk.id'|translate}}</mat-label>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit" [disabled]="!toolAddForm.form.valid || isEmpty()">
+        {{'stk.add'|translate}}
+      </button>
+    </form>
+
+    <div>
+      <p *ngIf="maxNumberOfTools()">
+        <mat-icon>info</mat-icon>
+        {{'stk.maxNumberOfTools'|translate}}
+      </p>
+      <div *ngIf="noToolsAdded()">
+        <mat-icon>info</mat-icon>
+        {{'stk.noToolsUsed'|translate}}
+      </div>
+      <fieldset *ngIf="!noToolsAdded()">
+        <legend>{{'stk.usedTools'|translate}}</legend>
+        <mat-chip-list>
+          <mat-chip *ngFor="let tool of stkService.selectedReport.tools; let i = index">
+            <b>
+              {{tool}}
+            </b>
+            <mat-icon matChipRemove (click)="removeTool(i)">
+              cancel
+            </mat-icon>
+          </mat-chip>
+          <br>
+        </mat-chip-list>
+      </fieldset>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{'stk.favorites'|translate}}">
+    <br>
+    <table>
+      <tr>
+        <th>{{'stk.id'|translate}}</th>
+        <th>{{'stk.description'|translate}}</th>
+        <th>
+        </th>
+      </tr>
+      <tr *ngFor="let tool of toolService.tools" class="hooverRow">
+        <td>{{tool.id}}</td>
+        <td>{{tool.description}}</td>
+        <td>
+          <button mat-icon-button color="primary" [disabled]="checkTool(tool.id)" (click)="addTool(tool.id)">
+            <mat-icon aria-label="add">add_circle</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" [disabled]="!idAlreadyUsed(tool.id)" (click)="removeToolById(tool.id)">
+            <mat-icon aria-label="remove">remove_circle</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </mat-tab>
+</mat-tab-group>
+

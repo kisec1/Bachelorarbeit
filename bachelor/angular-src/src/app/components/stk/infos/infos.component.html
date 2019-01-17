@@ -1,0 +1,132 @@
+<mat-tab-group *ngIf="stkService.selectedReport">
+  <mat-tab label="{{'stk.device' | translate}}">
+    <br>
+    <table>
+      <tr>
+        <th>{{"stk.id" | translate}}</th>
+        <td>{{stkService.selectedReport.device.id}}</td>
+        <th>{{"stk.serial" | translate}}</th>
+        <td>{{stkService.selectedReport.device.serial}}</td>
+      </tr>
+      <tr>
+        <th>{{"stk.model" | translate}}</th>
+        <td>{{stkService.selectedReport.device.model}}</td>
+        <th>{{"stk.year" | translate}}</th>
+        <td>{{stkService.selectedReport.device.year}}</td>
+      <tr>
+        <th>{{"stk.description" | translate}}</th>
+        <td>{{stkService.selectedReport.device.description}}</td>
+        <th>{{"stk.brand" | translate}}</th>
+        <td>{{stkService.selectedReport.device.brand}}</td>
+      </tr>
+      <tr>
+        <th>{{"stk.department" | translate}}</th>
+        <td>{{stkService.selectedReport.device.department}}</td>
+        <th>{{"stk.nextCheck" | translate}}</th>
+        <td>{{stkService.selectedReport.device.nextCheck}}</td>
+      </tr>
+      <tr>
+        <th>{{"stk.location" | translate}}</th>
+        <td>{{stkService.selectedReport.device.location}}</td>
+        <th>{{"stk.lastCheck" | translate}}</th>
+        <td>{{stkService.selectedReport.device.lastCheck}}</td>
+      </tr>
+      <tr>
+        <th>{{"stk.contract" | translate}}</th>
+        <td>{{stkService.selectedReport.device.contract}}</td>
+        <th>{{"stk.contractNr" | translate}}</th>
+        <td>{{stkService.selectedReport.device.contractNr}}</td>
+      </tr>
+      <tr>
+        <th>{{"stk.interval" | translate}}</th>
+        <td>{{stkService.selectedReport.device.interval}}</td>
+        <th>{{"stk.state" | translate}}</th>
+        <td>{{stkService.selectedReport.device.state}}</td>
+      </tr>
+    </table>
+  </mat-tab>
+  <mat-tab label="{{'stk.client' | translate}}">
+    <br>
+    <table>
+      <tr>
+        <th>{{"stk.name" | translate}}</th>
+        <td>{{stkService.selectedReport.client.name}}</td>
+      </tr>
+      <tr>
+        <th>{{"stk.street" | translate}}</th>
+        <td>{{stkService.selectedReport.client.street +" "+ stkService.selectedReport.client.houseNr}}</td>
+      <tr>
+        <th>{{"stk.city" | translate}}</th>
+      <td>{{stkService.selectedReport.client.zip}} {{stkService.selectedReport.client.city}}</td>
+      </tr>
+    </table>
+  </mat-tab>
+
+  <mat-tab label="{{'stk.corrections' | translate}}">
+    <br>
+    <mat-grid-list cols="2" rowHeight="60">
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-form-field>
+          <input [(ngModel)]="stkService.selectedReport.corrections.id" matInput>
+          <mat-label>{{"stk.id" | translate}}</mat-label>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-form-field>
+          <input [(ngModel)]="stkService.selectedReport.corrections.serial" matInput>
+          <mat-label>{{"stk.serial" | translate}}</mat-label>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-form-field>
+          <input [(ngModel)]="stkService.selectedReport.corrections.model" matInput>
+          <mat-label>{{"stk.model" | translate}}</mat-label>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-form-field>
+          <input [(ngModel)]="stkService.selectedReport.corrections.year"
+                 type="number"
+                 step="1"
+                 min="1950"
+                 [max]="checkMaxYear()"
+                 matInput>
+          <mat-label>{{"stk.year" | translate}}</mat-label>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-form-field>
+          <input [(ngModel)]="stkService.selectedReport.corrections.location" matInput>
+          <mat-label>{{"stk.location" | translate}}</mat-label>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-form-field>
+          <input [(ngModel)]="stkService.selectedReport.corrections.department" matInput>
+          <mat-label>{{"stk.department" | translate}}</mat-label>
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </mat-tab>
+</mat-tab-group>
+
+
+

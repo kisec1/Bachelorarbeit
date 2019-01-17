@@ -1,0 +1,68 @@
+<mat-vertical-stepper [linear]="false" #stepper *ngIf="checkTestProcedure()">
+  <mat-step *ngFor="let testSection of testProcedure.testSections; let i = index">
+    <ng-template matStepLabel>
+      <b>
+        <span class="sectionTitle" *ngIf="translateService.currentLang == 'de'">{{testSection.sectionTitle.description_de}}</span>
+        <span class="sectionTitle"*ngIf="translateService.currentLang == 'en'">{{testSection.sectionTitle.description_en}}</span>
+      </b>
+
+      <mat-icon *ngIf="testSection.validationCheck() == true" class="green">check_circle</mat-icon>
+      <mat-icon *ngIf="testSection.validationCheck() == false" class="orange">warning</mat-icon>
+      <mat-icon *ngIf="testSection.validationCheck() == null" class="black">edit</mat-icon>
+
+    </ng-template>
+
+      <div *ngFor="let testPoint of testSection.testPoints" class="testPoint">
+        <div>
+        <span matTooltip="{{ 'stk.nr' | translate }}: {{testPoint.nr}}">
+          <b *ngIf="translateService.currentLang == 'de'">{{testPoint.description_de}}</b>
+          <b *ngIf="translateService.currentLang == 'en'">{{testPoint.description_en}}</b>
+        </span>
+        </div>
+        <div *ngIf="testPoint.maxValue || testPoint.minValue" class="hint">
+          (
+          <span *ngIf="testPoint.minValue || !testPoint.minValue">{{testPoint.minValue}} &nbsp;</span>
+          <span *ngIf="testPoint.maxValue">- {{testPoint.maxValue}} &nbsp;</span>
+          <span *ngIf="testPoint.dimension">{{testPoint.dimension}}</span>
+          )
+        </div>
+
+        <mat-form-field class="maxWidth">
+
+          <!-- Is Showed when setpoint = "i.O" -->
+          <mat-select *ngIf="!checkSetPoint(testPoint)" placeholder="{{ 'stk.result' | translate }}"
+                      [(value)]="testPoint.result">
+            <mat-option value="i.O.">
+              <!--<mat-icon matListIcon>thumb_up</mat-icon>-->
+              Bestanden
+            </mat-option>
+            <mat-option value="X">
+              <!-- <mat-icon mat-list-icon>thumb_down</mat-icon>-->
+              Nicht bestanden
+            </mat-option>
+            <mat-option value="N.V.">
+              <!--<mat-icon>clear</mat-icon>-->
+              Nicht vorhanden
+            </mat-option>
+          </mat-select>
+
+          <input matInput *ngIf="checkSetPoint(testPoint)" placeholder="{{ 'stk.result' | translate }}"
+                 [(ngModel)]="testPoint.result">
+
+          <span matSuffix *ngIf="checkSetPoint(testPoint)">
+          {{testPoint.dimension}}
+        </span>
+
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="{{ 'stk.comment' | translate }}" [(ngModel)]="testPoint.comment">
+        </mat-form-field>
+        <mat-icon *ngIf="testPoint.validationCheck()" class="green">check_circle</mat-icon>
+        <mat-icon *ngIf="testPoint.validationCheck() == false" class="orange">warning</mat-icon>
+        <mat-divider></mat-divider>
+      </div>
+      <div *ngIf="i != testProcedure.testSections.length -1">
+        <button mat-button matStepperNext>{{ 'stk.next' | translate }}</button>
+      </div>
+  </mat-step>
+</mat-vertical-stepper>

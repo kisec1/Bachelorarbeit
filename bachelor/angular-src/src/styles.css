@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+
+.alert-danger{
+  width: 90%;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(201, 76, 76, 0.5);
+  font-size: large;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.alert-success{
+  width: 90%;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(50, 205, 50, 0.5);
+  font-size: large;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}

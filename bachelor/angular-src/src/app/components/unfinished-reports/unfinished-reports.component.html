@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-title>{{"unfinishedReports.unfinishedReports"|translate}}</mat-card-title>
+  <mat-card-content>
+    <div *ngIf="reports">
+      <table>
+        <tr>
+          <th>{{"unfinishedReports.deviceId"|translate}}</th>
+          <th>{{"unfinishedReports.model"|translate}}</th>
+          <th>{{"unfinishedReports.client"|translate}}</th>
+          <th>{{"unfinishedReports.technician"|translate}}</th>
+          <th>{{"unfinishedReports.date"|translate}}</th>
+          <th>{{"unfinishedReports.load"|translate}}</th>
+
+        </tr>
+        <tr *ngFor="let report of unfinishedReports">
+          <td>{{report.deviceId}}</td>
+          <td>{{report.deviceModel}}</td>
+          <td>{{report.clientName}}</td>
+          <td>{{report.technician}}</td>
+          <td>{{getDate(report.date)}}</td>
+          <td>
+            <button mat-icon-button
+                    color="primary"
+                    (click)="loadReport(report._id)"
+                    [disabled]="alreadyLoaded(report)">
+              <mat-icon *ngIf="!alreadyLoaded(report)">
+                cloud_download
+              </mat-icon>
+              <mat-icon *ngIf="alreadyLoaded(report)">
+                check_circle
+              </mat-icon>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </mat-card-content>
+  <mat-progress-bar mode="indeterminate" *ngIf="waiting"></mat-progress-bar>
+</mat-card>

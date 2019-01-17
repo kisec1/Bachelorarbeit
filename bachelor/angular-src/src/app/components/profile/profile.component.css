@@ -1,0 +1,34 @@
+table {
+  text-align: left;
+}
+
+mat-card {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+mat-card-subtitle {
+  font-size: large;
+}
+
+mat-form-field {
+  margin-right: 10px;
+}
+
+button {
+  margin-right: 10px;
+}
+
+fieldset {
+  margin-top: 20px;
+}
+
+table {
+  min-width: 400px;
+}
+
+a {
+  padding-top: 20px;
+}

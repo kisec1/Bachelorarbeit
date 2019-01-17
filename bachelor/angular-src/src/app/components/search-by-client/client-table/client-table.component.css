@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+}
+
+.mat-row:hover {
+  background: #f5f5f5;
+}
+
+.filter {
+  margin-top: 20px;
+}
+
+.refreshButton {
+  margin-top: 20px;
+  float: right;
+}

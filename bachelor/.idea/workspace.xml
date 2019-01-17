@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd0aefd3-534d-4177-959c-b7a837061342" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/search-by-client.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/search-by-client.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/search-by-client.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/search-by-client.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/conclusion/conclusion.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/conclusion/conclusion.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/conclusion/conclusion.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/conclusion/conclusion.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview-report-dialog/preview-report-dialog.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview-report-dialog/preview-report-dialog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview-report-dialog/preview-report-dialog.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview-report-dialog/preview-report-dialog.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/preview/preview.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spareparts-edit-dialog/spareparts-edit-dialog.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spareparts-edit-dialog/spareparts-edit-dialog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spareparts-edit-dialog/spareparts-edit-dialog.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spareparts-edit-dialog/spareparts-edit-dialog.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/stk.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/stk.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/stk.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/stk.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/test-procedure/test-procedure.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/test-procedure/test-procedure.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/test-procedure/test-procedure.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/test-procedure/test-procedure.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work-edit-dialog/work-edit-dialog.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work-edit-dialog/work-edit-dialog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work-edit-dialog/work-edit-dialog.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work-edit-dialog/work-edit-dialog.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/guards/auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/models/report.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/models/sparePart.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/models/testPoint.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/models/testProcedure.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/models/testSection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/models/work.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/client.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/device.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/overview.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/search-page.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/stk.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/tool.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/app/services/validate.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/assets/data/testProcedure.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/assets/i18n/de.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/assets/i18n/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular-src/src/assets/images/hospitoolLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular-src/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/angular-src/src/styles.css" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1350">
+              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/login/login.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+              <folding>
+                <element signature="e#369#375#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1170">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="e#0#81#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/passport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular-src/src/app/app.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>comment</find>
+      <find>not</find>
+      <find>notFini</find>
+      <find>pos</find>
+      <find>flas</find>
+      <find>technic</find>
+      <find>techni</find>
+      <find>date</find>
+      <find>nächste</find>
+      <find>serviceki</find>
+      <find>console</find>
+      <find>cdk</find>
+      <find>datasou</find>
+      <find>sort</find>
+      <find>spalte</find>
+      <find>next</find>
+      <find>datepi</find>
+      <find>stk</find>
+      <find>refr</find>
+      <find>filter</find>
+      <find>mat</find>
+      <find>search</find>
+      <find>save</find>
+      <find>fromjso</find>
+      <find>remo</find>
+      <find>appl</find>
+      <find>app</find>
+      <find>state</find>
+      <find>sla</find>
+      <find>thum</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/angular-src" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/unfinished-reports/unfinished-reports.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/overview/overviewDatasource.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/overview.service.ts" />
+        <option value="$PROJECT_DIR$/config/database.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/client.js" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/search-by-client.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/client.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/device.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/search-page.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/models/report.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/unfinished-reports/unfinished-reports.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/stk.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/stk.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/services/auth.service.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/search-by-client.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/stk.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/assets/i18n/de.json" />
+        <option value="$PROJECT_DIR$/angular-src/src/assets/i18n/en.json" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/work/work.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.html" />
+        <option value="$PROJECT_DIR$/routes/testProcedures.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/routes/clients.js" />
+        <option value="$PROJECT_DIR$/routes/devices.js" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.html" />
+        <option value="$PROJECT_DIR$/public/main.js" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/models/testPoint.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/stk/test-procedure/test-procedure.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/login/login.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/login/login.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/register/register.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.css" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.html" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.ts" />
+        <option value="$PROJECT_DIR$/angular-src/src/app/app.module.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="284" />
+    <option name="y" value="64" />
+    <option name="width" value="1193" />
+    <option name="height" value="758" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bachelor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bachelor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bachelor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bachelor" type="462c0819:PsiDirectoryNode" />
+              <item name="angular-src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bachelor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bachelor" type="462c0819:PsiDirectoryNode" />
+              <item name="angular-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bachelor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bachelor" type="462c0819:PsiDirectoryNode" />
+              <item name="angular-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bachelor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bachelor" type="462c0819:PsiDirectoryNode" />
+              <item name="angular-src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bachelor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bachelor" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="login&#9;FILE&#9;file:///Users/ck/CODE/webstorm/hospitool/angular-src/src/app/components/login/login.component.ts" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/angular-src/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/angular-src/src/assets/images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd0aefd3-534d-4177-959c-b7a837061342" name="Default Changelist" comment="" />
+      <created>1543258703404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1543258703404</updated>
+      <workItem from="1543258704761" duration="15862000" />
+      <workItem from="1543482590025" duration="21000" />
+      <workItem from="1543482620708" duration="12000" />
+      <workItem from="1543517600894" duration="25683000" />
+      <workItem from="1543587196271" duration="3256000" />
+      <workItem from="1543595175941" duration="129968000" />
+      <workItem from="1544886395343" duration="22402000" />
+      <workItem from="1545156931623" duration="10373000" />
+      <workItem from="1545243505086" duration="26129000" />
+      <workItem from="1545468376096" duration="43389000" />
+      <workItem from="1545733003491" duration="304000" />
+      <workItem from="1545733314055" duration="418000" />
+      <workItem from="1546200508548" duration="40128000" />
+      <workItem from="1546984192486" duration="187000" />
+      <workItem from="1547024517704" duration="241000" />
+      <workItem from="1547115625736" duration="2092000" />
+      <workItem from="1547278894333" duration="938000" />
+      <workItem from="1547455960799" duration="1273000" />
+      <workItem from="1547538240724" duration="8202000" />
+      <workItem from="1547632072478" duration="3673000" />
+      <workItem from="1547675131686" duration="271000" />
+      <workItem from="1547712677383" duration="556000" />
+      <workItem from="1547742888838" duration="518000" />
+      <workItem from="1547743543499" duration="102000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="335998000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="284" y="64" width="1193" height="758" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.306314" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.36036035" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.3299539" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.3299539" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="includedJSSourcePackages">
+      <set>
+        <option value="angular2-flash-messages" />
+      </set>
+    </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/assets/i18n/de.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2325">
+          <caret line="155" column="20" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/assets/i18n/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="156" column="19" selection-start-line="156" selection-start-column="19" selection-end-line="156" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/infos/infos.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-537" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/spare-parts/spare-parts.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/tools/tools.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/work/work.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="22" column="79" lean-forward="true" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/device-table/device-table.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/device.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/services/search-page.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/clients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/devices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-355" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/testProcedures.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/testProcedure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="2805" column="26" selection-start-line="2805" selection-start-column="26" selection-end-line="2805" selection-end-column="26" />
+          <folding>
+            <element signature="e#398#404#1" expanded="true" />
+            <element signature="e#688#694#1" expanded="true" />
+            <element signature="e#385#391#1" expanded="true" />
+            <element signature="e#642#648#1" expanded="true" />
+            <element signature="e#898#904#1" expanded="true" />
+            <element signature="e#1147#1153#1" expanded="true" />
+            <element signature="e#1419#1425#1" expanded="true" />
+            <element signature="e#395#401#0" expanded="true" />
+            <element signature="e#395#401#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#8;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#td#0;n#tr#8;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#4;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#5;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#6;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#7;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#8;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#9;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#10;n#td#0;n#tr#9;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#4;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#6;n#tr#1;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1095#1101#0" expanded="true" />
+            <element signature="e#1429#1435#0" expanded="true" />
+            <element signature="e#1774#1780#0" expanded="true" />
+            <element signature="e#1406#1412#0" expanded="true" />
+            <element signature="e#1491#1497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/models/testProcedure.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/models/testSection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/models/work.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/models/report.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/models/testPoint.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="51" lean-forward="true" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/stk/test-procedure/test-procedure.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/login/login.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/main-nav/main-nav.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/overview/overview.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="178" column="36" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/register/register.component.css" />
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+          <folding>
+            <element signature="e#369#375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/components/search-by-client/client-table/client-table.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-src/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

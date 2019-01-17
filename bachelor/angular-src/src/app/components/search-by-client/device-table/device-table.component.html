@@ -1,0 +1,60 @@
+<mat-progress-bar mode="indeterminate" *ngIf="waiting"></mat-progress-bar>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+
+<button mat-flat-button color="primary" class="refreshButton" (click)="updateDeviceList()">
+  <mat-icon aria-label="refresh button">refresh</mat-icon>
+  <span> &nbsp; {{"search.refresh"|translate}}</span>
+</button>
+
+<mat-table  #myTable [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id" >
+    <mat-header-cell *matHeaderCellDef mat-sort-header>{{"search.id"|translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{device.id}}</mat-cell>
+  </ng-container>
+
+  <!-- Model Column -->
+  <ng-container matColumnDef="model">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>{{"search.model"|translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{device.model}}</mat-cell>
+  </ng-container>
+
+  <!-- Serial Column -->
+  <ng-container matColumnDef="serial">
+    <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>{{"search.serial"|translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{device.serial}}</mat-cell>
+  </ng-container>
+
+  <!-- Deparment Column -->
+  <ng-container matColumnDef="department">
+    <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header>{{"search.department"|translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{device.department}}</mat-cell>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>{{"search.description"|translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{device.description}}</mat-cell>
+  </ng-container>
+
+  <!-- Next check Column -->
+  <ng-container matColumnDef="nextCheck">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>{{"search.nextCheck"|translate}}</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{device.nextCheck}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let device; columns: displayedColumns;" (click)="selectDevice(device)"></mat-row>
+</mat-table>
+
+<mat-paginator #paginator
+               [length]="dataSource.data.length"
+               [pageIndex]="0"
+               [pageSize]="20"
+               [pageSizeOptions]="[5, 10, 20, 30]">
+</mat-paginator>

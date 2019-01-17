@@ -1,0 +1,26 @@
+/*mat-chip {
+  max-width: 200px;
+}*/
+
+h1{
+  font-size: 12pt;
+}
+
+mat-form-field{
+  margin-right: 10px;
+}
+
+table{
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  border-collapse: collapse;
+}
+
+tr, td, th{
+  border-bottom: solid 1px black;
+}
+
+.hooverRow:hover {
+  background-color: #f5f5f5;
+}

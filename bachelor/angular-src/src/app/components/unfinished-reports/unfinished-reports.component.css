@@ -1,0 +1,20 @@
+mat-card {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+table{
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+tr{
+  border-bottom: 1px solid black;
+}
+
+tr:not(:first-child):hover {
+  background: #e0e0e0;
+}

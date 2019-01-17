@@ -1,0 +1,119 @@
+<mat-tab-group [(selectedIndex)]="activeTab">
+  <mat-tab label="{{ 'stk.add' | translate}}">
+    <div>
+
+      <p *ngIf="maxNumberOfWork()">
+        <mat-icon>info</mat-icon>
+        {{'stk.maxNumberOfWork'|translate}}
+      </p>
+
+      <form (ngSubmit)="onSubmitAdd();" #workForm="ngForm" *ngIf="!maxNumberOfWork()">
+        <fieldset>
+          <legend>{{ 'stk.work' | translate}}</legend>
+
+          <mat-form-field>
+            <mat-select [(ngModel)]="service" name="service" required>
+              <mat-option value="STK">STK</mat-option>
+              <mat-option value="REP">REP</mat-option>
+            </mat-select>
+            <mat-label>{{ 'stk.service' | translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput
+                   [matDatepicker]="dp3"
+                   disabled
+                   [(ngModel)]="date"
+                   name="date"
+                   required
+                   [matDatepickerFilter]="dateFilter">
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+            <mat-label> {{ 'stk.date' | translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="technician"
+                   name="technician"
+                   required
+                   minlength="4"
+                   maxlength="4">
+            <mat-label>{{ 'stk.technician' | translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input class="numberField"
+                   matInput
+                   type="number"
+                   step="0.25"
+                   min="0"
+                   max="10"
+                   [(ngModel)]="workload"
+                   name="workload"
+                   required>
+            <mat-label>{{ 'stk.workload' | translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput class="numberField"
+                   type="number"
+                   step="0.25"
+                   min="0"
+                   max="10"
+                   [(ngModel)]="travelTime"
+                   name="travelTime"
+                   required>
+            <mat-label>{{ 'stk.travelTime' | translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-checkbox [(ngModel)]="chargeable" (keyup.spacebar)="chargeable = !chargeable" name="chargeable">
+            {{ 'stk.chargeable' | translate}}
+          </mat-checkbox>
+        </fieldset>
+        <button mat-flat-button type="submit" [disabled]="!workForm.form.valid">{{ 'stk.add' | translate}}</button>
+      </form>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{ 'stk.overview' | translate}}">
+    <br>
+
+    <p *ngIf="noWorkAdded()">
+      <mat-icon>info</mat-icon>
+      {{'stk.noWork'|translate}}
+    </p>
+
+    <table *ngIf="!noWorkAdded()">
+      <tr>
+        <th>{{ 'stk.service' | translate}}</th>
+        <th>{{ 'stk.date' | translate}}</th>
+        <th>{{ 'stk.technician' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.workload' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.travelTime' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.total' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.chargeable' | translate}}</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let work of stkService.selectedReport.work; let i = index" class="hooverRow">
+        <td>{{work.service}}</td>
+        <td>{{work.date | date: 'dd.MM.yyyy'}}</td>
+        <td>{{work.technician}}</td>
+        <td class="centerAlign">{{work.workload}}</td>
+        <td class="centerAlign">{{work.travelTime}}</td>
+        <td class="centerAlign">{{work.workload + work.travelTime}}</td>
+        <td class="centerAlign">
+          <span *ngIf="work.chargeable">&#10004;</span>
+        </td>
+        <td>
+          <button mat-icon-button color="primary" (click)="openDialog(i)">
+            <mat-icon aria-label="edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="removeWork(i)">
+            <mat-icon aria-label="delete">delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </mat-tab>
+
+</mat-tab-group>

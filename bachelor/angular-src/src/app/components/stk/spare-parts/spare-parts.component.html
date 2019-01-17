@@ -1,0 +1,93 @@
+<mat-tab-group [(selectedIndex)]="activeTab">
+  <mat-tab label="{{'stk.add'|translate}}">
+    <div>
+      <p *ngIf="maxNumberOfSpareParts()">
+        <mat-icon>info</mat-icon>
+        {{'stk.maxNumberOfSpareParts'|translate}}
+      </p>
+      <form  (ngSubmit)="onSubmitAdd(); sparePartForm.resetForm();" #sparePartForm="ngForm" *ngIf="!maxNumberOfSpareParts()">
+        <fieldset>
+          <legend>{{'stk.spareParts'|translate}}</legend>
+          <mat-form-field>
+            <input matInput [(ngModel)]="articleNr" required name="articleNumber">
+            <mat-label>{{'stk.articleNumber'|translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="description" required name="description">
+            <mat-label> {{'stk.description'|translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="serial" required name="serial">
+            <mat-label>{{'stk.serial'|translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="supplier" required name="supplier">
+            <mat-label>{{'stk.supplier'|translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput class="numberField" type="number" step="1"
+                   min="1" max="100" [(ngModel)]="amount" required name="amount">
+            <mat-label>{{'stk.amount'|translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput class="numberField" [(ngModel)]="price" type="number" name="price" min="0" max="99999">
+            <mat-label>{{'stk.price'|translate}}</mat-label>
+          </mat-form-field>
+
+          <mat-checkbox [(ngModel)]="chargeable" (keyup.enter)="chargeable = !chargeable" name="chargeable">
+            {{'stk.chargeable'|translate}}
+          </mat-checkbox>
+        </fieldset>
+        <button mat-flat-button type="submit" [disabled]="!sparePartForm.form.valid">{{'stk.add'|translate}}</button>
+      </form>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{'stk.overview'|translate}}">
+    <br>
+    <p *ngIf="noSparePartsAdded()">
+      <mat-icon>info</mat-icon>
+      {{'stk.noSpareParts'|translate}}
+    </p>
+    <table *ngIf="!noSparePartsAdded()">
+      <tr>
+        <th>{{ 'stk.articleNumber' | translate}}</th>
+        <th>{{ 'stk.description' | translate}}</th>
+        <th>{{ 'stk.serial' | translate}}</th>
+        <th>{{ 'stk.supplier' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.amount' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.price' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.total' | translate}}</th>
+        <th class="centerAlign">{{ 'stk.chargeable' | translate}}</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let sparePart of stkService.selectedReport.spareParts; let i = index" class="hooverRow">
+        <td>{{sparePart.articleNr}}</td>
+        <td>{{sparePart.description}}</td>
+        <td>{{sparePart.serial}}</td>
+        <td>{{sparePart.supplier}}</td>
+        <td class="centerAlign"> {{sparePart.amount}}</td>
+        <td class="centerAlign">{{sparePart.price}}</td>
+        <td class="centerAlign">
+          <span *ngIf="sparePart.price && sparePart.amount">{{sparePart.price * sparePart.amount}}</span>
+        </td>
+        <td class="centerAlign">
+          <span *ngIf="sparePart.chargeable">&#10004;</span>
+        </td>
+        <td>
+          <button mat-icon-button (click)="openDialog(i)" color="primary">
+            <mat-icon aria-label="edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="removeSparePart(i)" color="warn">
+            <mat-icon aria-label="delete">delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </mat-tab>
+</mat-tab-group>

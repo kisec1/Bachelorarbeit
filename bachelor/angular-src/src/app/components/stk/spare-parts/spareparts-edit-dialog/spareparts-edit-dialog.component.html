@@ -1,0 +1,67 @@
+<h2 mat-dialog-title="">{{ 'stk.edit' | translate}}</h2>
+
+<mat-dialog-content>
+  <form (ngSubmit)="onSubmit()" #sparePartForm="ngForm">
+    <mat-form-field>
+      <input matInput
+             placeholder="{{ 'stk.articleNumber' | translate}}" [(ngModel)]="sparePart.articleNr"
+             required
+             name="articleNumber">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="{{ 'stk.description' | translate}}" [(ngModel)]="sparePart.description"
+             required
+             name="description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{ 'stk.serial' | translate}}" [(ngModel)]="sparePart.serial"
+             required
+             name="serial">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{ 'stk.supplier' | translate}}" [(ngModel)]="sparePart.supplier"
+             required
+             name="supplier">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput class="numberField" placeholder="{{ 'stk.amount' | translate}}"
+             type="number"
+             step="1"
+             min="1"
+             max="50"
+             required
+             name="amount"
+             [(ngModel)]="sparePart.amount">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput class="numberField"
+             placeholder="{{ 'stk.price' | translate}}"
+             [(ngModel)]="sparePart.price"
+             type="number"
+             name="price"
+             min="0"
+             max="99999"
+      >
+    </mat-form-field>
+
+    <br>
+    <mat-checkbox [(ngModel)]="sparePart.chargeable"
+                  (keyup.enter)="sparePart.chargeable = !sparePart.chargeable"
+                  name="chargeable">
+      {{ 'stk.chargeable' | translate}}
+    </mat-checkbox>
+    <br>
+
+    <div class="button-row">
+      <button mat-button mat-dialog-close>{{ 'stk.cancel' | translate}}</button>
+      <button mat-flat-button type="submit" [disabled]="!sparePartForm.form.valid">{{ 'stk.save' | translate}}</button>
+    </div>
+
+  </form>
+</mat-dialog-content>

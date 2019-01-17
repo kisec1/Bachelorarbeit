@@ -1,0 +1,97 @@
+<mat-card>
+
+  <mat-card-header *ngIf="stkService.selectedReport">
+    <mat-card-title>
+      <h3>
+        {{"stk.id"|translate}}:
+        {{stkService.selectedReport.device.id}}
+      </h3>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <h3>
+        {{"stk.model"|translate}}:
+        {{stkService.selectedReport.device.model}}
+      </h3>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content *ngIf="!stkService.selectedReport">
+    <h2>{{"stk.noProtocolSelected"|translate}}</h2>
+  </mat-card-content>
+
+  <mat-card-content cdk-scrollable="true" *ngIf="stkService.selectedReport">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{"stk.information"|translate}}</b>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-infos></app-infos>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{"stk.tools"|translate}}</b>
+            &nbsp; ({{stkService.numberOfTools()}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-tools></app-tools>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{"stk.spareParts"|translate}}</b>
+            &nbsp; ({{stkService.numberOfSpareParts()}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-spare-parts></app-spare-parts>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{"stk.work"|translate}}</b>
+            &nbsp; ({{stkService.numberOfWork()}})
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-work></app-work>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{"stk.testProcedure"|translate}}</b>
+            <mat-icon *ngIf="stkService.selectedReport.testProcedure.validationCheck() == true" class="green">check_circle</mat-icon>
+            <mat-icon *ngIf="stkService.selectedReport.testProcedure.validationCheck() == false" class="orange">warning</mat-icon>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-test-procedure></app-test-procedure>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <b>{{"stk.conclusion"|translate}}</b>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-conclusion></app-conclusion>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-card-content>
+
+  <mat-card-actions *ngIf="stkService.selectedReport">
+    <button mat-flat-button (click)="openDialog()">{{"stk.preview"|translate}}</button>
+    <button mat-flat-button (click)="saveReport()">
+      {{"stk.save"|translate}}
+    </button>
+    <button mat-flat-button
+            (click)="uploadReport()"
+            [disabled]="!stkService.selectedReport.isValid()">
+      {{"stk.send"|translate}}
+    </button>
+    <button mat-flat-button class="deleteButton"
+            (click)="removeSelectedReport()" color="warn">
+      {{"stk.delete"|translate}}
+    </button>
+  </mat-card-actions>
+
+</mat-card >
